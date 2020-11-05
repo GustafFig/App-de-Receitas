@@ -1,276 +1,38 @@
 # Boas vindas ao repositório do projeto de Receitas!
 
-Você já usa o GitHub diariamente para desenvolver os exercícios, certo? Agora, para desenvolver os projetos, você deverá seguir as instruções a seguir. Fique atento a cada passo, e se tiver qualquer dúvida, nos envie por _Slack_! #vqv 🚀
+Esse foi meu projeto final de Front End da Trybe, feito junto com os
+- [Raphael Ribeiro](https://github.com/raphaRS)
+- [André Palhares](https://github.com/potew)
+- [Wener](https://github.com/lucas-werner)
 
-Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu projeto a partir desse repositório, utilizando uma branch específica e um _Pull Request_ para colocar seus códigos.
+Tivemos 10 dias para desenvolver esse ilustre repositório, cumprindo os 88 requisitos, que foram avaliados automaticamente pelo github.
+Usando especialmente, **React**, **Hooks** e **Content API**.
+Usamos duas APIs distintas, uma para comidas, o [TheMealDB](https://www.themealdb.com/), e outra para bebidas [CockTailDB](https://www.thecocktaildb.com/api.php)
+O layout tinha como foco dispositivos móveis.
 
 ---
 
-## Instruções para entregar seu projeto:
-
-### ANTES DE COMEÇAR A DESENVOLVER:
+### Para rodar
 
 1. Clone o repositório
-  * `git clone git@github.com:tryber/sd-03-recipes-app-01.git`.
-  * Entre na pasta do repositório que você acabou de clonar:
-    * `cd sd-03-recipes-app-01`
+  * `git clone git@github.com:GustafFig/App-de-Receitas.git`.
 
 2. Instale as dependências, inicialize o projeto e rode os testes
   * Instale as dependências:
     * `npm install`
   * Inicialize o projeto:
-    * `npm start` (uma nova página deve abrir no seu navegador com um texto simples)
-  * Verifique que os testes E2E estão executando:
-    * `npm run cy` (os testes devem rodar e falhar)
-    * `npm run cy:open` (os testes devem rodar e falhar, legal caso queira ver o Cypress funcionando)
-
-3. Crie uma branch a partir da branch `master`
-  * Verifique que você está na branch `master`
-    * Exemplo: `git branch`
-  * Se não estiver, mude para a branch `master`
-    * Exemplo: `git checkout master`
-  * Agora, crie uma branch onde você vai guardar os `commits` do seu projeto
-    * Você deve criar uma branch no seguinte formato: `nome-de-usuário-nome-do-projeto`
-    * Exemplo: `git checkout -b joaozinho-recipes-app`
-
-5. Adicione as mudanças ao _stage_ do Git e faça um `commit`
-  * Verifique que as mudanças ainda não estão no _stage_
-    * Exemplo: `git status` (deve aparecer listada a pasta _components_ em vermelho)
-  * Adicione o novo arquivo ao _stage_ do Git
-      * Exemplo:
-        * `git add .` (adicionando todas as mudanças - _que estavam em vermelho_ - ao stage do Git)
-        * `git status` (deve aparecer listado o arquivo _components/Header.jsx_ em verde)
-  * Faça o `commit` inicial
-      * Exemplo:
-        * `git commit -m 'iniciando o projeto. VAMOS COM TUDO :rocket:'` (fazendo o primeiro commit)
-        * `git status` (deve aparecer uma mensagem tipo _nothing to commit_ )
-
-6. Adicione a sua branch com o novo `commit` ao repositório remoto
-  * Usando o exemplo anterior: `git push -u origin joaozinho-recipes-app`
-
-7. Crie um novo `Pull Request` _(PR)_
-  * Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-03-recipes-app-01/pulls)
-  * Clique no botão verde _"New pull request"_
-  * Clique na caixa de seleção _"Compare"_ e escolha a sua branch **com atenção**
-  * Clique no botão verde _"Create pull request"_
-  * Adicione uma descrição para o _Pull Request_ e clique no botão verde _"Create pull request"_
-  * **Não se preocupe em preencher mais nada por enquanto!**
-  * Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-03-recipes-app-01/pulls) e confira que o seu _Pull Request_ está criado
+    * `npm start` (uma nova página deve abrir no seu navegador)
+    
+3. Para Dev's
+  * Rode os nosso testes:
+   * `npm run test`
+  * Rode os testes automáticos do desafio:
+    * `npm run cy`
+    * `npm run cy:open`
 
 ---
 
-## O que deverá ser desenvolvido
-
-Você irá desenvolver um app de receitas, utilizando o que há de mais moderno dentro do ecossistema React: Hooks e Context API!
-
-Nela será possível ver, buscar, filtrar, favoritar e acompanhar o processo de preparação de receitas e drinks!
-
-A base de dados serão 2 APIs distintas, uma para comidas e outra para bebidas.
-
-O layout tem como foco dispositivos móveis, então todos os protótipos vão estar desenvolvidos em telas menores.
-
-Você pode acessar um protótipo no link abaixo:
-
-https://www.figma.com/file/WatDxtKl7g54QxhDi9qdbq/App-Receitas?node-id=0%3A1
-
-Lembre-se de escrever testes unitários e sinta-se livre para alterar a UI, só respeite os atributos `data-testid`, eles serão usados na correção do exercício.
-
-Você pode ler mais sobre atributos para testes [nesse link](https://www.eduardopedroso.com.br/?p=494)
-
-#### ⚠️ Lembre-se de escrever testes unitários e sinta-se livre para alterar a UI, só respeite os atributos `data-testid`, eles serão usados na correção do exercício.
-
-#### ⚠️ Para ver os comentários sobre cada componente, basta clicar no ícone de comentários no Figma (lado esquerdo superior).
-
-![image](https://res.cloudinary.com/drdpedroso/image/upload/c_scale,w_400/v1575815877/Screenshot_2019-12-08_at_11.37.25_kzt7rl.png)
-
----
-
-## Desenvolvimento e testes
-
-Este repositório já contem um _template_ com um App React criado, configurado e com os testes da avaliação automatizada.
-
-Esses [testes E2E](https://www.guru99.com/end-to-end-testing.html) automatizados podem ser utilizados para ajudar a validar as funcionalidades do projeto localmente. É possível executar esses testes via `npm run cy:open`. Esse comando abre a interface que permite rodar a suite de testes do [Cypress](https://www.cypress.io/how-it-works/) que valida o fluxo geral e os requisitos funcionais do projeto.
-
-Esses testes não consideram o layout de maneira geral, mas sim os atributos e informações corretas, então preste atenção nos atributos definidos no protótipo.
-
-Os testes te darão uma mensagem de erro caso não estejam passando (seja qual for o motivo). 😉
-
-#### Além dos testes da avaliação automatizada, um dos requisitos do projeto se baseia em **escrever testes unitários que cubram pelo menos 90% do projeto**. Na [documentação do Jest CLI](https://jestjs.io/docs/en/cli) é possível ver como essa cobertura é coletada.
-
-## APIs
-
-### TheMealDB API
-
-O [TheMealDB](https://www.themealdb.com/) é um banco de dados aberto, mantido pela comunidade, com receitas e ingredientes de todo o mundo.
-
-Os end-points são bastante ricos, você pode [vê-los aqui](https://www.themealdb.com/api.php)
-
-O modelo de resposta para uma `meal` é o seguinte:
-```json
-{
-   "meals":[
-      {
-         "idMeal":"52882",
-         "strMeal":"Three Fish Pie",
-         "strDrinkAlternate":null,
-         "strCategory":"Seafood",
-         "strArea":"British",
-         "strInstructions":"Preheat the oven to 200C\/400F\/Gas 6 (180C fan).\r\nPut the potatoes into a saucepan of cold salted water. Bring up to the boil and simmer until completely tender. Drain well and then mash with the butter and milk. Add pepper and taste to check the seasoning. Add salt and more pepper if necessary.\r\nFor the fish filling, melt the butter in a saucepan, add the leeks and stir over the heat. Cover with a lid and simmer gently for 10 minutes, or until soft. Measure the flour into a small bowl. Add the wine and whisk together until smooth.\r\nAdd the milk to the leeks, bring to the boil and then add the wine mixture. Stir briskly until thickened. Season and add the parsley and fish. Stir over the heat for two minutes, then spoon into an ovenproof casserole. Scatter over the eggs. Allow to cool until firm.\r\nSpoon the mashed potatoes over the fish mixture and mark with a fork. Sprinkle with cheese.\r\nBake for 30-40 minutes, or until lightly golden-brown on top and bubbling around the edges.",
-         "strMealThumb":"https:\/\/www.themealdb.com\/images\/media\/meals\/spswqs1511558697.jpg",
-         "strTags":"Fish,Seafood,Dairy,Pie",
-         "strYoutube":"https:\/\/www.youtube.com\/watch?v=Ds1Jb8H5Sg8",
-         "strIngredient1":"Potatoes",
-         "strIngredient2":"Butter",
-         "strIngredient3":"Milk",
-         "strIngredient4":"Gruy\u00e8re",
-         "strIngredient5":"Butter",
-         "strIngredient6":"Leek",
-         "strIngredient7":"Plain Flour",
-         "strIngredient8":"White Wine",
-         "strIngredient9":"Milk",
-         "strIngredient10":"Parsley",
-         "strIngredient11":"Salmon",
-         "strIngredient12":"Haddock",
-         "strIngredient13":"Smoked Haddock",
-         "strIngredient14":"Eggs",
-         "strIngredient15":"",
-         "strIngredient16":"",
-         "strIngredient17":"",
-         "strIngredient18":"",
-         "strIngredient19":"",
-         "strIngredient20":"",
-         "strMeasure1":"1kg",
-         "strMeasure2":"Knob",
-         "strMeasure3":"Dash",
-         "strMeasure4":"50g",
-         "strMeasure5":"75g",
-         "strMeasure6":"2 sliced",
-         "strMeasure7":"75g",
-         "strMeasure8":"150ml",
-         "strMeasure9":"568ml",
-         "strMeasure10":"2 tbs chopped",
-         "strMeasure11":"250g",
-         "strMeasure12":"250g",
-         "strMeasure13":"250g",
-         "strMeasure14":"6",
-         "strMeasure15":"",
-         "strMeasure16":"",
-         "strMeasure17":"",
-         "strMeasure18":"",
-         "strMeasure19":"",
-         "strMeasure20":"",
-         "strSource":"https:\/\/www.bbc.co.uk\/food\/recipes\/three_fish_pie_58875",
-         "dateModified":null
-      }
-   ]
-}
-```
-
-Os ingredientes seguem uma ordem lógica onde o nome dele (`strIngredient1`) e a quantidade (`strMeasure1`) tem o mesmo número no final (1, nesse caso).
-
-É possível listar todas as `categorias`, `áreas` e `ingredientes`:
-
-```
-categorias: https://www.themealdb.com/api/json/v1/1/list.php?c=list
-areas: https://www.themealdb.com/api/json/v1/1/list.php?a=list
-ingredientes: https://www.themealdb.com/api/json/v1/1/list.php?i=list
-```
-
-As fotos dos ingredientes vêm de um end-point padronizado com a seguinte lógica:
-
-```
-https://www.themealdb.com/images/ingredients/{nome-do-ingrediente}.png
-// exemplo com "lime
-https://www.themealdb.com/images/ingredients/Lime.png
-```
-
-### The CockTailDB API
-
-Bem similar (inclusive mantida pela mesma entidade) a TheMealDB API, só que focado em bebidas.
-
-Os end-points também são bastante ricos, você pode [vê-los aqui](https://www.thecocktaildb.com/api.php)
-
-As respostas seguem a mesma estrutura, com algumas particularidade relativas as bebidas (como ser ou não alcoólica, por exemplo)
-
-```json
-{
-   "drinks":[
-      {
-         "idDrink":"17256",
-         "strDrink":"Martinez 2",
-         "strDrinkAlternate":null,
-         "strDrinkES":null,
-         "strDrinkDE":null,
-         "strDrinkFR":null,
-         "strDrinkZH-HANS":null,
-         "strDrinkZH-HANT":null,
-         "strTags":null,
-         "strVideo":null,
-         "strCategory":"Cocktail",
-         "strIBA":null,
-         "strAlcoholic":"Alcoholic",
-         "strGlass":"Cocktail glass",
-         "strInstructions":"Add all ingredients to a mixing glass and fill with ice.\r\n\r\nStir until chilled, and strain into a chilled coupe glass.",
-         "strInstructionsES":null,
-         "strInstructionsDE":"Alle Zutaten in ein Mischglas geben und mit Eis f\u00fcllen. Bis zum Abk\u00fchlen umr\u00fchren und in ein gek\u00fchltes Coup\u00e9glas abseihen.",
-         "strInstructionsFR":null,
-         "strInstructionsZH-HANS":null,
-         "strInstructionsZH-HANT":null,
-         "strDrinkThumb":"https:\/\/www.thecocktaildb.com\/images\/media\/drink\/fs6kiq1513708455.jpg",
-         "strIngredient1":"Gin",
-         "strIngredient2":"Sweet Vermouth",
-         "strIngredient3":"Maraschino Liqueur",
-         "strIngredient4":"Angostura Bitters",
-         "strIngredient5":null,
-         "strIngredient6":null,
-         "strIngredient7":null,
-         "strIngredient8":null,
-         "strIngredient9":null,
-         "strIngredient10":null,
-         "strIngredient11":null,
-         "strIngredient12":null,
-         "strIngredient13":null,
-         "strIngredient14":null,
-         "strIngredient15":null,
-         "strMeasure1":"1 1\/2 oz",
-         "strMeasure2":"1 1\/2 oz",
-         "strMeasure3":"1 tsp",
-         "strMeasure4":"2 dashes",
-         "strMeasure5":null,
-         "strMeasure6":null,
-         "strMeasure7":null,
-         "strMeasure8":null,
-         "strMeasure9":null,
-         "strMeasure10":null,
-         "strMeasure11":null,
-         "strMeasure12":null,
-         "strMeasure13":null,
-         "strMeasure14":null,
-         "strMeasure15":null,
-         "strCreativeCommonsConfirmed":"No",
-         "dateModified":"2017-12-19 18:34:15"
-      }
-   ]
-}
-```
-
-Os ingredientes seguem uma ordem lógica onde o nome dele (`strIngredient1`) e a quantidade (`strMeasure1`) tem o mesmo número no final (1, nesse caso).
-
----
-
-## Implementações técnicas
-
-Algumas coisas devem seguir um padrão pré-estabelecido para que os teste de correção funcionem corretamente.
-
-⚠️ Leia-os atentamente e siga à risca o que for pedido. O não cumprimento de um requisito, total ou parcialmente, impactará em sua avaliação. ⚠️
-
-* Os requisitos do seu projeto são avaliados automaticamente, sendo utilizada a resolução de tela de `360 x 640` (360 pixels de largura por 640 pixels de altura).
-
-    - ⚠️ Logo, recomenda-se desenvolver seu projeto usando a mesma resolução, via instalação [deste plugin](https://chrome.google.com/webstore/detail/window-resizer/kkelicaakdanhinjdeammmilcgefonfh?hl=en) do `Chrome` para facilitar a configuração da resolução. ⚠️
-
-### Rotas
-
-As rotas a serem utilizadas na aplicação devem ser as seguintes:
+### Confira as Rotas!!
 
 * Tela de login: `/`;
 * Tela principal de receitas de comidas: `/comidas`;
@@ -289,112 +51,15 @@ As rotas a serem utilizadas na aplicação devem ser as seguintes:
 * Tela de receitas feitas: `/receitas-feitas`;
 * Tela de receitas favoritas: `/receitas-favoritas`.
 
-### `localStorage`
-
-O uso de `localStorage` é necessário para que as informações não se percam caso a pessoa atualize a página.
-O correto é usar os valores para iniciar sua store ou seu context.
-
-No `localStorage` do navegador:
-
-* a chave `mealsToken` deve conter a seguinte estrutura:
-```
-1
-```
-
-* a chave `cocktailsToken` deve conter a seguinte estrutura:
-```
-1
-```
-
-* a chave `user` deve conter a seguinte estrutura:
-```
-{
-    email: email-da-pessoa
-}
-```
-
-* a chave `doneRecipes` deve conter a seguinte estrutura:
-```
-[{
-    id: id-da-receita,
-    type: comida-ou-bebida,
-    area: area-da-receita-ou-texto-vazio,
-    category: categoria-da-receita-ou-texto-vazio,
-    alcoholicOrNot: alcoholic-ou-non-alcoholic-ou-texto-vazio,
-    name: nome-da-receita,
-    image: imagem-da-receita,
-    doneDate: quando-a-receita-foi-concluida,
-    tags: array-de-tags-da-receita-ou-array-vazio
-}]
-```
-
-* a chave `favoriteRecipes` deve conter a seguinte estrutura:
-```
-[{
-    id: id-da-receita,
-    type: comida-ou-bebida,
-    area: area-da-receita-ou-texto-vazio,
-    category: categoria-da-receita-ou-texto-vazio,
-    alcoholicOrNot: alcoholic-ou-non-alcoholic-ou-texto-vazio,
-    name: nome-da-receita,
-    image: imagem-da-receita
-}]
-```
-
-* a chave `inProgressRecipes` deve conter a seguinte estrutura:
-```
-{
-    cocktails: {
-        id-da-bebida: [lista-de-ingredientes-utilizados],
-        ...
-    },
-    meals: {
-        id-da-comida: [lista-de-ingredientes-utilizados],
-        ...
-    }
-}
-```
-
-    **Observação:** `id-da-bebida` e `id-da-comida` representam o ID de uma bebida e comida, respectivamente, e cada item da lista de ingredientes da respectiva receita deve ser representado apenas pelo número do ingrediente no formato numérico.
-
-### Ícones
-
-Os ícones a serem utilizados na aplicação estão disponíveis do diretório `src/image/`. Esses ícones serão utilizados pelos testes da avaliação automatizada, então certifique-se de utilizá-los nos requisitos e de não renomeá-los.
-
-Os ícones são:
-
-* `profileIcon.svg`;
-* `searchIcon.svg`;
-* `drinkIcon.svg`;
-* `exploreIcon.svg`;
-* `mealIcon.svg`;
-* `shareIcon.svg`;
-* `whiteHeartIcon.svg`;
-* `blackHeartIcon.svg`.
-
----
-
-# Requisitos do projeto
-
-⚠️ Lembre-se que o seu projeto só será avaliado se estiver passando pelos _checks_ do **CodeClimate**.
-
-Nesse projeto, a pessoa que estiver utilizando o app pode procurar uma receita especifica, explorar receitas baseado em diferentes critérios, favoritar e fazer as receitas entre outras funcionalidades.
-
-As telas sofrem variações dependendo do tipo da receita (se é comida ou bebida, no caso).
-
-#### O projeto sera composto por duas entregas, cada uma especificada abaixo com seus respectivos requisitos e o prazo decidido com o especialista.
-
-## Requisitos - Apresentação 1
+## Descrição dos Requisitos
+  **Não vou te fazer ler todos os 88, ao invés disso, vou dar uma descrição sucinta das funcionalidades e páginas**
 
 ### 1 - A cobertura de testes unitários deve ser de no mínimo 90%.
 
 ## Tela de login
 
-### 2 - Todos os elementos devem respeitar os atributos descritos no protótipo para a tela de login.
-
-### 3 - A pessoa deve conseguir escrever seu email no input de email.
-
-### 4 - A pessoa deve conseguir escrever sua senha no input de senha.
+Essa tela tem o campo para email e senha de entrada, eles não são conferidos realmente em um banco de dados, mas tem que respeitar o formato de email e senha de mais de 6 caracteres.
+No
 
 ### 5 - O formulário só fica válido após um email válido e uma senha de mais de 6 caracteres serem preenchidos. Caso o formulário esteja inválido, o botão de submeter deve estar desativado, contendo a propriedade `disabled`. Caso contrário, deve estar ativado, não contendo a propriedade `disabled`.
 
